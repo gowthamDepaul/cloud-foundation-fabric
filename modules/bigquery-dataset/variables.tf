@@ -246,7 +246,20 @@ variable "tables" {
       }))
     }))
   }))
-  default = {}
+  default = {
+    example_table1 = {
+      description = "Example table 1"
+      deletion_protection = true
+      friendly_name = "Example Table 1"
+      schema = "id:INTEGER, name:STRING, age:INTEGER"
+    },
+    example_table2 = {
+      description = "Example table 2"
+      deletion_protection = false
+      friendly_name = "Example Table 2"
+      schema = "id:INTEGER, email:STRING, address:STRING"
+    }
+  }
 }
 
 variable "views" {
